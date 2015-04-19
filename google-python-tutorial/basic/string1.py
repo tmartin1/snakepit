@@ -24,7 +24,10 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-  # +++your code here+++
+  if count < 10:
+    print count
+  else:
+    print 'many'
   return
 
 
@@ -91,7 +94,7 @@ def main():
   test(both_ends('a'), '')
   test(both_ends('xyz'), 'xyyz')
 
-  
+
   print
   print 'fix_start'
   test(fix_start('babble'), 'ba**le')
