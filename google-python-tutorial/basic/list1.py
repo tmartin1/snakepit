@@ -56,9 +56,42 @@ def front_x(words):
 # e.g. [(1, 7), (1, 3), (3, 4, 5), (2, 2)] yields
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
+# Implemented as a merge sort.
 def sort_last(tuples):
-  # +++your code here+++
-  return
+  # Returns the value of the last element of the tuple.
+  def key(tuple):
+    return tuple[len(tuple)-1]
+
+  # If array length is greater than one, split it and recursively call sort_last.
+  if len(tuples) > 1:
+    mid = len(tuples) // 2
+    left = tuples[:mid]
+    right = tuples[mid:]
+
+    sort_last(left)
+    sort_last(right)
+
+    # Put the split arrays back together in sorted order.
+    i = 0
+    j = 0
+    k = 0
+    while i < len(left) and j < len(right):
+      if key(left[i]) < key(right[j]):
+        tuples[k] = left[i]
+        i += 1
+      else:
+        tuples[k] = right[j]
+        j += 1
+      k += 1
+    while i < len(left):
+      tuples[k] = left[i]
+      i += 1
+      k += 1
+    while j < len(right):
+      tuples[k] = right[j]
+      j += 1
+      k += 1
+  return tuples
 
 
 # Simple provided test() function used in main() to print
