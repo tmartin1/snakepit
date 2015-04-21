@@ -39,10 +39,7 @@ def front_x(words):
   xes = []
   others = []
   for item in words:
-    if item[0] == 'x':
-      xes.append(item)
-    else:
-      others.append(item)
+    xes.append(item) if item[0] == 'x' else others.append(item)
   xes.sort()
   others.sort()
   xes.extend(others)
