@@ -17,10 +17,7 @@
 # Return the resulting string.
 def verbing(s):
   if len(s) >= 3:
-    if s[-3:] == 'ing':
-      return s + 'ly'
-    else:
-      return s + 'ing'
+    return s + 'ly' if s[-3:] == 'ing' else s + 'ing'
   return s
 
 
@@ -35,9 +32,7 @@ def verbing(s):
 def not_bad(s):
   notIndex = s.find('not')
   badIndex = s.find('bad')
-  if notIndex > 0 and badIndex > notIndex:
-    return s[:notIndex] + 'good' + s[badIndex+3:]
-  return s
+  return s[:notIndex] + 'good' + s[badIndex+3:] if notIndex > 0 and badIndex > notIndex else s
 
 
 # F. front_back
