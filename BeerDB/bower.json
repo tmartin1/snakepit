@@ -1,0 +1,14 @@
+{
+  "name": "BeerDB",
+  "version": "0.0.0",
+  "description": "Databse of beers.",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3"
+  }
+}
