@@ -41,6 +41,15 @@ def disconnect():
 def index():
     return render_template("index.html")
 
+# Get specific beer from database by name.
+@app.route('/beers/<beername>')
+def beers():
+    print beername
+    connect()
+    beer = collection.find_one({ 'name': beername })
+    disconnect()
+    return beer
+
 # Get all beers from database.
 @app.route("/beers/all")
 def beers_all():
