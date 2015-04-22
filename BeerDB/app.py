@@ -21,40 +21,40 @@ FIELDS = {
     'note': True
 }
 
-# connection
-# collection
+connection = None
+collection = None
+
 # Helper function to establish connection to the database.
-# def connect():
-#     connection = Connection(MONGODB_HOST, MONGODB_PORT)
-#     collection = connection[DBS_NAME][COLLECTION_NAME]
+def connect():
+    global connection
+    global collection
+    connection = Connection(MONGODB_HOST, MONGODB_PORT)
+    collection = connection[DBS_NAME][COLLECTION_NAME]
 
 # Helper function to disconnect from the database.
-# def disconnect():
-#     connection.disconnect()
+def disconnect():
+    global connection
+    connection.disconnect()
 
 # Define route for home page.
 @app.route("/")
 def index():
     return render_template("index.html")
 
-
 # Get all beers from database.
 @app.route("/beers/all")
 def beers_all():
-    connection = Connection(MONGODB_HOST, MONGODB_PORT)
-    collection = connection[DBS_NAME][COLLECTION_NAME]
+    connect()
     beers = collection.find(fields=FIELDS, limit=50000)
     json_beers = []
     for beer in beers:
         json_beers.append(beer)
     json_beers = json.dumps(json_beers, default=json_util.default)
-    connection.disconnect()
+    disconnect()
     return json_beers
-
 
 # Add new beer to database.
 # ...
-
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
