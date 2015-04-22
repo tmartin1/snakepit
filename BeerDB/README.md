@@ -1,5 +1,5 @@
 # BeerDB
-A simple database of beers written in jQuery, Python, Flask, MongoEngine, and MongoDB.
+A simple database of beers written in jQuery, Python, Flask, PyMongo, and MongoDB.
 
 # Getting Started
 Instal dependencies as follows:
