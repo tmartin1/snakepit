@@ -3,8 +3,8 @@
   <meta charset="utf-8">
   <head>
     <title>BeerDB</title>
-    <script src="../client/bower_components/jquery/dist/jquery.js"></script>
-    <script src="../client/index.js"></script>
+    <script src="../static/bower_components/jquery/dist/jquery.js"></script>
+    <script src="../static/index.js"></script>
   </head>
 
   <body>
@@ -46,27 +46,32 @@
       <h2>Search for a beer in the database:
         <input type="text" name="name" value="">
         <button type="button" onClick="findBeer()">Search</button>
+        <button type="button" onClick="getAllBeers()">Get All Beers</button>
       </h2>
 
+      <!-- Display list of all beers in database -->
+      <div class="beerList" style="display:none">
+      </div>
+
       <!-- Display for found or not found beer -->
-      <div class="results">
-        <h4>Name:</h4>
-        <p id="nameDisplay"></p>
+      <div class="singleBeer" style="display:none">
+        <h4>Name</h4>
+        <label id="nameDisplay"></label>
 
-        <h4>Brewer:</h4>
-        <p id="brewerDisplay"></p>
+        <h4>Brewer</h4>
+        <label id="brewerDisplay"></label>
 
-        <h4>ABV:</h4>
-        <p id="abvDisplay"></p>
+        <h4>ABV</h4>
+        <label id="abvDisplay"></label>
 
-        <h4>Malt:</h4>
-        <p id="maltDisplay"></p>
+        <h4>Malt</h4>
+        <label id="maltDisplay"></label>
 
-        <h4>Hops:</h4>
-        <p id="hopsDisplay"></p>
+        <h4>Hops</h4>
+        <label id="hopsDisplay"></label>
 
-        <h4>Note:</h4>
-        <p id="noteDisplay"></p>
+        <h4>Note</h4>
+        <label id="noteDisplay"></label>
       </div>
     </div>
 
