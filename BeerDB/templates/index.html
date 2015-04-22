@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+  <head>
+    <title>BeerDB</title>
+    <script src="../client/bower_components/jquery/dist/jquery.js"></script>
+    <script src="../client/index.js"></script>
+  </head>
+
+  <body>
+    <h1>Interface and API for a database of beer!</h1>
+    <hr>
+
+    <!-- Add beer to database -->
+    <div class="addBeerPane">
+      <h2>Add a new beer to the database:</h2>
+      <label for="name">Name:</label>
+      <input id="name" type="text" name="name" value="">
+      <br>
+
+      <label for="brewer">Brewer:</label>
+      <input id="brewer" type="text" name="name" value="">
+      <br>
+
+      <label for="abv">ABV:</label>
+      <input id="abv" type="number" name="name" value="">
+      <br>
+
+      <label for="malt">Malt:</label>
+      <input id="malt" type="text" name="name" value="">
+      <br>
+
+      <label for="hops">Hops:</label>
+      <input id="hops" type="text" name="name" value="">
+      <br>
+
+      <label for="note">Note:</label>
+      <input id="note" type="text" name="name" value="">
+      <br>
+      <br>
+      <button type="button" onClick="addBeer()">Add Beer</button>
+    </div>
+
+    <!-- Search for beer -->
+    <div class="findBeerPane">
+      <h2>Search for a beer in the database:
+        <input type="text" name="name" value="">
+        <button type="button" onClick="findBeer()">Search</button>
+      </h2>
+
+      <!-- Display for found or not found beer -->
+      <div class="results">
+        <h4>Name:</h4>
+        <p id="nameDisplay"></p>
+
+        <h4>Brewer:</h4>
+        <p id="brewerDisplay"></p>
+
+        <h4>ABV:</h4>
+        <p id="abvDisplay"></p>
+
+        <h4>Malt:</h4>
+        <p id="maltDisplay"></p>
+
+        <h4>Hops:</h4>
+        <p id="hopsDisplay"></p>
+
+        <h4>Note:</h4>
+        <p id="noteDisplay"></p>
+      </div>
+    </div>
+
+  </body>
+
+</html>
